@@ -1,0 +1,25 @@
+<Context antiResourceLocking="false" privileged="true" >
+<Environment name="Name" value="jdbc/irg" type="java.lang.String"/>
+<Environment name="JNDI name" value="name=jdbc/irg" type="java.lang.String"/>
+<Environment name="irg/jnlp.context" value="https://irg-ti.vlaanderen.be/irg" type="java.lang.String"/>
+<Environment name="irg/vkb.url" value="https://geomob-ti.vlaanderen.be/geomob/verkeersborden/pages/secured/main.jsp?url=https%3A%2F%2Fgeomob-ti.vlaanderen.be%2Fgeomob%2Floket" type="java.lang.String"/>
+<Environment name="irg/application.logouturl" value="https://irg-ti.vlaanderen.be/tb/html/pages?TAM_OP=logout&amp;type=local" type="java.lang.String"/>
+<Environment name="irg/support.mail.contact" value="aanvullendereglementen@mow.vlaanderen.be" type="java.lang.String"/>
+<Environment name="irg/batch.email.to.abmv" value="sophie.vercruyssen@dxcfds.com" type="java.lang.String"/>
+<Environment name="irg/batch.email.to.tm" value="sophie.vercruyssen@dxcfds.com" type="java.lang.String"/>
+  <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>     
+
+<Resource name="jdbc/irg" 
+      global="jdbc/irg" 
+      auth="Container" 
+      type="javax.sql.DataSource" 
+      driverClassName="org.postgresql.Driver" 
+      url="jdbc:postgresql://postgresql:5432/irg_db" 
+      username="irg_appl" 
+      password="irg_appl" 
+      maxActive="100" 
+      maxIdle="20" 
+      minIdle="5" 
+      maxWait="10000"/>
+
+</Context>

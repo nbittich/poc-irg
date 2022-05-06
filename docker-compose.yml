@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  postgresql:
+    restart: always
+    image: "postgres"
+    environment:
+      ALLOW_EMPTY_PASSWORD: "yes"
+      POSTGRES_USER: irg_appl
+      POSTGRES_PASSWORD: irg_appl
+      POSTGRES_DB: irg_db
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  tommy:
+    build: .
+    volumes:
+      - $PWD/context.xml:/usr/local/tomcat/conf/context.xml
